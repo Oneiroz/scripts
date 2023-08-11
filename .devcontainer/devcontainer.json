@@ -4,7 +4,15 @@
     // Use the base codespace image
     "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
   
-    "remoteUser": "codespace",
+    // Specify remote user
+    "remoteUser": "node",
+
+     // Forward ports from container to host
+     "forwardPorts": [
+      3000
+    ],
+  
+    // Forward VS Code to host
     "overrideCommand": false,
 
     // Add the IDs of extenstions to be installed when container is created.
