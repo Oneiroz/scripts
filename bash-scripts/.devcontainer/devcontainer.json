@@ -1,0 +1,36 @@
+{
+    // Name this configuration
+    "name": "Codespace for Scripts",
+    // Use the base codespace image
+    "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
+  
+    // Specify remote user
+    "remoteUser": "node",
+
+     // Forward ports from container to host
+     "forwardPorts": [
+      3000
+    ],
+  
+    // Forward VS Code to host
+    "overrideCommand": false,
+
+    // Add the IDs of extenstions to be installed when container is created.
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "GitHub.copilot"
+        ],
+        // Specify settings to be used when container is created.
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash"
+        }
+      },
+      "codespaces": {
+        "openFiles": [
+          "README.md"
+        ]
+      }
+    },
+    "postCreateCommand": "echo '# Welcome to my Scripts repo.' >> README.md"  
+  }
